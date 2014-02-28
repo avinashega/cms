@@ -1,0 +1,16 @@
+extends ../layouts/default
+
+block content
+	.container: .jumbotron(style='background-image:url("/images/background.jpg");min-height:500px;')
+		.mapbox(style='width:50%;height:400px;float:right;background-color:#fff;')
+			#map(style='width:100%;height:300px;')
+			#content
+				h4 Shopping Center
+				h4 400 Churchill Road, Kilburn, SA 5084
+				h4 Phone 1234 5678
+block js
+	script.
+		$(document).ready(function(){
+			var map= L.mapbox.map('map', 'examples.map-20v6611k').setView([37.9, -77], 6);
+			L.mapbox.featureLayer({type: 'Feature',	geometry: {type: 'Point', coordinates: [-77, 37.9]},properties: { title: 'A Single Marker',    description: 'Just one of me',  'marker-size': 'large',  'marker-color': '#f0a'}}).addTo(map);
+		});
