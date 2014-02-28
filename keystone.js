@@ -46,7 +46,7 @@ keystone.set('locals', {
 	utils: keystone.utils,
 	editable: keystone.content.editable
 });
-
+keystone.set('cloudinary config', { cloud_name: 'cms', api_key: '141378977431521', api_secret: 'ySvjkg7SBYwYKfhd3ckQP5s4Fwg' });
 // Load your project's Routes
 
 keystone.set('routes', require('./routes'));
